@@ -10,10 +10,11 @@ import json
 from functools import wraps
 
 app = Flask(__name__)
-app.config.from_pyfile('config.cfg')
+# app.config.from_pyfile('config.cfg')
 # mongo = MongoClient('localhost', 27017)
 # app.db = mongo.trip_planner_development
-mongo = MongoClient(app.config['MONGO_CLIENT'])
+# mongo = MongoClient(app.config['MONGO_CLIENT'])
+mongo = MongoClient('mongodb://sky94:12345@ds227525.mlab.com:27525/trip_planner_real')
 app.db = mongo.trip_planner_real
 api = Api(app)
 app.bcrypt_rounds = 12
