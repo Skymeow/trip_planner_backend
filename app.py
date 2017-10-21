@@ -71,9 +71,9 @@ class User(Resource):
             print('hash successed')
             return(new_user, 201, None)
         elif not 'username' in new_user:
-            return({"error": "no username? you crazy"}, 404, None)
+            return({"error": "no username? you crazy"}, 400, None)
         elif not 'email' in new_user:
-            return({"error": "no email? you crazy"}, 404, None)
+            return({"error": "no email? you crazy"}, 400, None)
         else:
             return("no sure why but you screwed up", 400, None)
 
